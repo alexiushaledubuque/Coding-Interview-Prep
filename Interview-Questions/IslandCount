@@ -1,0 +1,33 @@
+// Iterative Approach
+function countIslands (mapStr) {
+  var subArrays = mapStr.split("\n");
+  var array = [],
+  	   islands = 0;
+  subArrays.forEach(function(arr){
+     array.push(arr.split(""));
+  });
+
+  for(var i=0;i<array.length;i++){
+     for (var e=0; e <array[i].length; e++){
+          if (array[i][e] == "0"){
+         if (i > 0 && array[i-1][e] !== "0" && e > 0 && array[i][e-1] !=="0"){
+          islands++;
+         }
+         else if(i > 0 && array[i-1][e] === "0" &&  e > 0 &&
+           array[i][e-1] === "0" && array[i-1][e-1] !== "0"){
+           islands--;
+         }
+         else if( i === 0 && e > 0 && array[i][e-1] !== "0"){
+          islands++;
+         }
+         else if( e === 0 && i > 0 && array[i-1][e] !== "0"){
+          islands++;
+         }
+         else if (i === 0 && e === 0){
+          islands++;
+         }
+      }
+     }
+  }
+  return islands;
+ } 
