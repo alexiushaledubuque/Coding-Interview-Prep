@@ -1,4 +1,4 @@
-// Iterative Approach
+// Iterative Approach  Time Complexity - O(n^2)
 function countIslands (mapStr) {
   var subArrays = mapStr.split("\n");
   var array = [],
@@ -9,20 +9,27 @@ function countIslands (mapStr) {
 
   for(var i=0;i<array.length;i++){
      for (var e=0; e <array[i].length; e++){
-          if (array[i][e] == "0"){
+
+      // Encounter an Island - now check for possible clusters
+      if (array[i][e] == "0"){
+         // Check previous row & increase islands if no nearby 0 found
          if (i > 0 && array[i-1][e] !== "0" && e > 0 && array[i][e-1] !=="0"){
           islands++;
          }
+         // Check previous row & decrease islands if a nearby 0 is found
          else if(i > 0 && array[i-1][e] === "0" &&  e > 0 &&
            array[i][e-1] === "0" && array[i-1][e-1] !== "0"){
            islands--;
          }
+         // Check current row & increase islands if no nearby 0 found
          else if( i === 0 && e > 0 && array[i][e-1] !== "0"){
           islands++;
          }
+         // Check within current array if island found and the next row does not have a nearby 0
          else if( e === 0 && i > 0 && array[i-1][e] !== "0"){
           islands++;
          }
+         // Check the first item of the first row & increase islands if 0 found
          else if (i === 0 && e === 0){
           islands++;
          }
@@ -30,4 +37,6 @@ function countIslands (mapStr) {
      }
   }
   return islands;
- } 
+ }
+
+ //Recursive Approach
