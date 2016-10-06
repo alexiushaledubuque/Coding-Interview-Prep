@@ -41,7 +41,7 @@ var twoIntegers = function (array, target){
 
   for (var i = 0; i < size; i++){
     for (var e = i+1; e < size; e++){
-      if (array[i] + array[e] === 8){
+      if (array[i] + array[e] === target){
         return true;
       }
     }
