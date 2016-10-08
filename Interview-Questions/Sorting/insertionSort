@@ -31,14 +31,9 @@ var insertionSort = function(array){
     value = array[i];
     k = i - 1;
 
-	console.log("array[k] is: ", array[k]);
-    console.log(" is greater than value: ", value);
     while (array[k] > value){
-      //console.log("array[i--] is: ", array[i--]);
-      //console.log("array[k--] is: ", array[k--]);
-      array[i--] = array[k--];
+        array[i--] = array[k--];
     }
-
     array[i] = value;
   }
   return array;
