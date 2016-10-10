@@ -1,6 +1,6 @@
 // Merge Sort algorithm sorts the items in the array by splitting the array in half
 // then sorting each left/right half first, then merge the 2 halfs into 1 array
-// Time Complexity 0 ( n log ( n)) - Memory depends
+// Time Complexity 0 ( n log ( n)) - Space Complexity O(n)
 
 function mergeSort(arr)
 {
