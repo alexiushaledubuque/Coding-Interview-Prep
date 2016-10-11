@@ -5,7 +5,6 @@ function sortScores(unorderedScores, highestPossibleScore) {
     for (var i = 0; i < highestPossibleScore + 1; i++) {
         scoresToCounts.push(0);
     }
-    console.log('length: ', scoresToCounts.length);
 
     // populate scoresToCounts
     unorderedScores.forEach(function(score) {
@@ -24,10 +23,7 @@ function sortScores(unorderedScores, highestPossibleScore) {
         // for the number of times the item occurs
         for (var time = 0; time < count; time++) {
             sortedScores.push(score);
-            console.log('count: ', count);
-            console.log('score: ', score);
         }
-        //console.log('SortedScores: ', sortedScores);
     });
 
     return sortedScores;
