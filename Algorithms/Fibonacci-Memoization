@@ -1,3 +1,17 @@
+/*
+https://www.sitepoint.com/implementing-memoization-in-javascript/
+Memoization can potentially increase performance by caching the results of
+previous function calls.
+Memoized functions store a cache which is indexed by their input arguments.
+If the arguments exist in the cache, then the cached value is returned.
+Otherwise, the function is executed and the newly computed value is added to the cache.
+Object arguments should be stringified before using as an index.
+Memoization can be automatically applied to referentially transparent functions.
+Memoization may not be ideal for infrequently called or fast executing functions.
+*/
+
+
+
 // Regular Recursive fibonacci
 function fibonacci(n) {
   if (n === 0 || n === 1)
