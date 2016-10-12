@@ -130,3 +130,10 @@ function memoize(func) {
 
   }
 }
+
+// Check runtimes with console.time & console.timeEnd
+console.time ('someFunction Name');
+// Run whatever needs to be timed inbetween the statements
+fibonacci(20);
+// Display the end time elapsed since the function executed
+console.timeEnd('someFunction Name');
