@@ -11,8 +11,8 @@ nthFibonacci = function(n) {
   return array[n];
 };
 
-// Time O(n) - Space O(1)
-nth2Fibonacci = function(n) {  
+// Time O(n) - Space O(1) without using storage objects - just variables
+nth2Fibonacci = function(n) {
   debugger;
   var sum = 0;
   var prevPrev = 0;
