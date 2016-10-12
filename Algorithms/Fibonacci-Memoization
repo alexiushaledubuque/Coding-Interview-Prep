@@ -30,7 +30,7 @@ var fibonacci = (function() {
   return f;
 })();
 
-// Multiple Arguments
+// Multiple Arguments 2 Formats: named arguments & arguments array
 var fibonacci = (function() {
   var memo = {};
 
@@ -48,6 +48,32 @@ var fibonacci = (function() {
         value = f(x, n - 1) + f(x, n - 2);
 
       memo[x][n] = value;
+    }
+
+    return value;
+  }
+
+  return f;
+})();
+
+// Using the arguments array
+var fibonacci = (function() {
+  var memo = {};
+  var slice = Array.prototype.slice;
+
+  function f(x, n) {
+    var args = slice.call(arguments);
+    var value;
+
+    if (args in memo) {
+      value = memo[args];
+    } else {
+      if (n === 0 || n === 1)
+        value = n;
+      else
+        value = f(x, n - 1) + f(x, n - 2);
+
+      memo[arguments] = value;
     }
 
     return value;
