@@ -11,6 +11,11 @@
   position.
 */
 
+const bubbleSort = array => {
+  
+}
+
+
 var bubbleSort = function(array){
   // set a boolean sort flag
   var sorted = true;

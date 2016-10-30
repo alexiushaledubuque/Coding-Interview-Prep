@@ -45,6 +45,29 @@ var insertionSort = function(array){
   return array;
 };
 
+// ES6 version
+const insertionSort = nums => {
+  let size = nums.length;
+  
+  for (var i = 1; i < size; i++){
+    for (var j = 0; j < i; j++){
+      if (nums[i] < nums[j]){
+        // remove the lower item
+        var remove = nums.splice(i, 1);
+        
+        // insert the removed item back into the array in the correct position
+        nums.splice(j, 0, remove[0]);
+      }
+    }
+  }
+  return nums;
+};
+
+var nums = [10, 3, 4, 20, 1];
+//var nums = [10,5,3,8,2,6,4,7,9,1]
+
+insertionSort(nums);
+
 var array = [10,1,400, 0, 7, 3,11, 2000,-1, -876, 4];
 
 console.log(insertionSort(array));
