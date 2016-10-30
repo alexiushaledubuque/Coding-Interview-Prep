@@ -21,22 +21,25 @@
 */
 
 const selectionSort = nums => {
-	// declare the minimum index
+	// declare the minimum index and temp for swaps
 	let min = 0,
-		temp,
-		sorted = false;
+			temp;
 		
 	for (var i = 0; i < nums.length; i++){
+		// set the minimum index for later swap
 		min = i;
 		for (var e = i + 1; e < nums.length; e++){
 			if (nums[e] < nums[min]){
+				// reassign minimum index if value is less in a different location
 				min = e;
 			} 
 		}
+		// after finding minimum value & index, swap the current index item with the item at minimum value index 
 		temp = nums[i];
 		nums[i] = nums[min];
 		nums[min] = temp;
 	}
+	// return the sorted array
 	return nums;
 };
 
