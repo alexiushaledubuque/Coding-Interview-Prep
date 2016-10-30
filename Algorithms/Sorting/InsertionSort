@@ -52,7 +52,8 @@ const insertionSort = nums => {
   for (var i = 1; i < size; i++){
     for (var j = 0; j < i; j++){
       if (nums[i] < nums[j]){
-        // remove the lower item
+
+        // remove the item to be repositioned
         var remove = nums.splice(i, 1);
         
         // insert the removed item back into the array in the correct position
