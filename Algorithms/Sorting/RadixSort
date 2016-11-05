@@ -1,41 +1,41 @@
 function radixSort(array) {
-	debugger;
-        var mod = 10, 
-        	dev = 1,
-        	maxDigitCount = 0;
-        	
-        // configure the maxDigitCount
-        for (var m = 0; m < array.length; m++) {
-            if (String(array[m]).length > maxDigitCount){
-        		maxDigitCount = String(array[m]).length;
-        	}
-        }
-    
-        // sort the items for number of maxDigitCount cycles
-        for (var i = 0; i < maxDigitCount; i++, dev *= 10, mod *= 10) {
-            for(var j = 0; j < array.length; j++) {
-              var bucket = parseInt((array[j] % mod) / dev);
-              console.log('bucket: ', bucket);
-              console.log('mod: ', mod);
-              console.log('dev: ', dev);
-              if(counter[bucket]==null) {
-                counter[bucket] = [];
-              }
-              counter[bucket].push(array[j]);
-            }
+  var mod = 10, 
+  	dev = 1,
+  	maxDigitCount = 0;
+  	
+  // configure the maxDigitCount
+  for (var m = 0; m < array.length; m++) {
+      if (String(array[m]).length > maxDigitCount){
+  		maxDigitCount = String(array[m]).length;
+  	}
+  }
 
-            // Remove items from sorting array counter to prepare for the next cycle of sorting
-            var pos = 0;
-            for(var j = 0; j < counter.length; j++) {
-                var value = null;
-              if(counter[j]!=null) {
-                while ((value = counter[j].shift()) != null) {
-                    array[pos++] = value;
-                }
-              }
-            }
+  // sort the items for number of maxDigitCount cycles
+  for (var i = 0; i < maxDigitCount; i++, dev *= 10, mod *= 10) {
+      for(var j = 0; j < array.length; j++) {
+        var bucket = parseInt((array[j] % mod) / dev);
+        if(counter[bucket]==null) {
+          counter[bucket] = [];
         }
-        return array;
+        counter[bucket].push(array[j]);
+      }
+
+      // Remove items from sorting array counter to prepare for the next cycle of sorting
+      var pos = 0;
+      for(var j = 0; j < counter.length; j++) {
+          var value = null;
+        if(counter[j]!=null) {
+          while ((value = counter[j].shift()) != null) {
+              array[pos++] = value;
+          }
+        }
+      }
+  }
+  // remove temporary storage to clean up memory
+  delete counter;
+
+  // return the sorted array
+  return array;
 }
 
 var counter = [[]];
