@@ -11,6 +11,5 @@ function binaryToDecimal (n) {
       result += Math.pow(2, i)
     }
   }
-
   return result
 }
