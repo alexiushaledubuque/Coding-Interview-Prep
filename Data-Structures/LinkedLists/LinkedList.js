@@ -2,6 +2,15 @@ var LinkedList = function() {
   this.head = null;
 }
 
+LinkedList.prototype.newNode = function(value) {
+  var node = {
+    data: value,
+    next: null
+  }
+
+  return node;
+};
+
 LinkedList.prototype.append = function(value){
     var addNode = this.newNode(value);
 
@@ -59,21 +68,33 @@ LinkedList.prototype.palindrome = function(){
     current = current.next;
   }
   var reverse = array.reverse();
-  return array === array.reverse();
+  return array === reverse;
 }
 
-LinkedList.prototype.reverse = function() {
+LinkedList.prototype.reverse = function(sll) {
 	debugger;
     if (this.head === null || this.head.next === null) {
         return;
     }
-    var first = this.head;
-    var rest = new LinkedList(this.head.next);
-    rest.reverse();
-    first.next.next = first;
-    first.next = null;
-    this.head = rest.head;
-    list.print();
+    let traverse = this.head;
+    let arr = [];
+    
+    while(traverse.next !== null) {
+      arr.push(traverse.data)
+      traverse = traverse.next
+    }
+    arr.push(traverse.data)
+    
+    let newList = new LinkedList();
+    newList.head = this.newNode(arr.pop());
+    
+    var current = newList.head;
+  
+    for (let i = arr.length - 1; i > 0; i--) {
+      newList.append(arr[i])
+    }
+    newList.append(arr[0])
+    return JSON.stringify(newList);
 }
 
 LinkedList.prototype.remove = function(value){
@@ -139,16 +160,6 @@ LinkedList.prototype.print = function() {
   output += ']';
   console.log(output);
 }
-
-LinkedList.prototype.newNode = function(value) {
-  var node = {
-    data: value,
-    next: null
-  }
-
-  return node;
-};
-
 
 var list = new LinkedList();
 
