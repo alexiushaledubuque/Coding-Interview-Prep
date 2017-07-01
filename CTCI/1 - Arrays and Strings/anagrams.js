@@ -9,7 +9,7 @@
 		7. Return the array of strings
 
 		Time Complexity: O(n)
-		Space Complexity: Constant O(n)
+		Space Complexity: Constant O(n) for the duplicate checking.
 */
 
 const allAnagrams = (string) => {
