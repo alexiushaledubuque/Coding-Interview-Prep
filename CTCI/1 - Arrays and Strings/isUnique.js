@@ -21,13 +21,15 @@ const isUnique = (arr) => {
 }
 
 /*
-    With Storage
+    Without Storage
     Approach: 
     1. Sort the array
     2. Iterate
     3. If the current value is the same as the next value, return false
     4. If it's not, continue
     5. When iteration is complete and no false triggered, return true
+
+    if sorting strings, use array.sort()
 
     Time Complexity - O(n) Space O(1) Constant for comparison
 */
