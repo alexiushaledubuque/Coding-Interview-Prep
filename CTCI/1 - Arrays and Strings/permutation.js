@@ -1,3 +1,4 @@
+
 // String Permutation
 const permutation = (inputArr) => {
   let result = [];
