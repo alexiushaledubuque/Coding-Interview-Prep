@@ -57,6 +57,18 @@ LinkedList.prototype.contains = function(value){
   return false;
 }
 
+LinkedList.prototype.middle = function() {
+  let slow = this.head,
+      fast = this.head
+      
+  while(fast.next !== null) {
+     fast = fast.next.next
+     slow = slow.next
+  }
+
+  return fast.next === null ? slow.data : slow.next
+}
+
 LinkedList.prototype.palindrome = function(){
   // Iterative
   debugger;
