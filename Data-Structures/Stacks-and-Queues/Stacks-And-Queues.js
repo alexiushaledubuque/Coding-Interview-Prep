@@ -1,3 +1,4 @@
+// Basic Stack Implementation
 var Stack = function() {
   var storage = [];
 
@@ -14,6 +15,7 @@ var Stack = function() {
   };
 };
 
+// Implement the Queue using 2 Stacks
 var Queue = function() {
 
   var inbox = new Stack();
