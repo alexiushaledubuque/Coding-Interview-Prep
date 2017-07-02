@@ -124,11 +124,6 @@ LinkedList.prototype.removeDupsBuff = function(){
   }
 };
 
-// LinkedList.prototype.removeDupsNoBuff = function(){
-//   var previous = null;
-//   var current = this.head;
-// };
-
 LinkedList.prototype.print = function() {
   //debugger;
   var output = '[';

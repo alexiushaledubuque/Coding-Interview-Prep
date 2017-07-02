@@ -1,3 +1,5 @@
+// ITERATIVE APPROACH
+
 // Time O(n) - Space O(n)
 nthFibonacci = function(n) {
 	debugger;

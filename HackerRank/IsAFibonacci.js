@@ -19,7 +19,7 @@ function processData(input) {
 		}
 		output += '\n';
 	}
-	//console.log(output.trim());
+	
 	return output.trim();
 }
 

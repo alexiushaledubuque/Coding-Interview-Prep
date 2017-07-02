@@ -10,6 +10,16 @@ Memoization can be automatically applied to referentially transparent functions.
 Memoization may not be ideal for infrequently called or fast executing functions.
 */
 
+// Iterative fibonacci
+const fibIterative = n => {
+  let [a, b] = [1, 0]
+  while (n-- > 0) {
+    [a, b] = [b + a, a]
+  }
+  return b
+}
+
+fibIterative(7)
 
 
 // Regular Recursive fibonacci
